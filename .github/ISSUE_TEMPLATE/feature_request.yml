@@ -1,0 +1,43 @@
+name: Feature request
+description: Suggest an improvement to reelcrew
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. Please search existing issues and discussions first.
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      description: Which part of reelcrew is this for?
+      options:
+        - "reelcrew CLI"
+        - "Video skill (name it below)"
+        - "Setup / install / update"
+        - "Accounts / licensing"
+        - "Studio"
+        - "Other / cross-product"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What are you trying to do, and what stops you today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: The change as you would see it.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Workarounds or other approaches you have thought about.
+    validations:
+      required: false

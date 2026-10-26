@@ -1,0 +1,64 @@
+name: Bug report
+description: Something in reelcrew does not work as documented
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please search existing issues first. After an error, `reelcrew report` writes one redacted file with everything below; paste it into the last field.
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      description: Which part of reelcrew is affected?
+      options:
+        - "reelcrew CLI"
+        - "Video skill (name it in the description)"
+        - "Setup / install / update"
+        - "Accounts / licensing"
+        - "Studio"
+        - "Other / not sure"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Output of `reelcrew --version`
+      placeholder: "e.g. 0.4.2"
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Expected vs. actual behaviour.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: The commands or actions, in order.
+      placeholder: |
+        1. Run 'reelcrew ...'
+        2. ...
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS and version, Node version, how reelcrew was installed.
+      placeholder: "macOS 15.5, Node 22.x, installed with install.sh"
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Doctor output and logs
+      description: Paste `reelcrew report` output, or `reelcrew doctor` plus the error text. Redact keys, tokens, emails and paths on your machine.
+      render: shell
+    validations:
+      required: false
